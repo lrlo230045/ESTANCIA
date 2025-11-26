@@ -1,0 +1,397 @@
+:root {
+  --bg-main: #f7f5f9;
+  --text-main: #5a4a57;
+  --form-bg: #ffffff;
+  --shadow-main: #e2c1c9;
+  --input-inset-dark: #c5d7e3;
+  --input-inset-light: #c8f5f2;
+  --outline-main: #a0e7e5;
+  --btn-bg: #a0e7e5;
+  --btn-text: #2e2e2e;
+  --accent-pink: #ffb6b9;
+  --accent-lavender: #d8c7f1;
+}
+
+
+/* Igual estructura que el tema neón */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+/* Vistas */
+body.vista-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body.vista-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+/* Panel lateral */
+.panel-lateral {
+  width: 20%;
+  background-color: var(--form-bg);
+  border-radius: 15px;
+  box-shadow: 0 0 15px var(--shadow-main);
+  padding: 10px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.panel-lateral img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Contenido central */
+.contenido {
+  width: 55%;
+  text-align: center;
+  background-color: var(--form-bg);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--shadow-main);
+  margin: auto;
+}
+
+/* Formularios */
+form {
+  background-color: var(--form-bg);
+  padding: 30px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 0 20px var(--shadow-main);
+  margin-top: 50px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: var(--form-bg);
+  color: var(--text-main);
+  border: none;
+  outline: 2px solid var(--outline-main);
+}
+
+/* Botones */
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 12px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: 2px solid var(--accent-lavender);
+  box-shadow: 0 4px 12px rgba(160, 231, 229, 0.5);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-color: var(--shadow-main);
+  transform: translateY(-3px);
+}
+
+/* Interruptor */
+.switch-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--accent-lavender);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: var(--accent-pink);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--btn-bg);
+
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--text-main);
+}
+
+body.vista-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px; 
+    gap: 40px;
+}
+
+/* Panel lateral izquierdo y derecho */
+.panel-lateral {
+    width: 22%;
+    background-color: var(--form-bg);
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--shadow-main);
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 85vh;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.panel-lateral:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px var(--outline-main);
+}
+
+.panel-lateral h3 {
+    color: var(--text-main);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.panel-lateral img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 0 8px var(--input-inset-light);
+}
+
+/* Contenido central */
+.contenido {
+    width: 50%;
+    text-align: center;
+    background-color: var(--form-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--shadow-main);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+
+/* Botones del panel */
+.botones-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* separación entre botones */
+    margin-top: 40px;
+}
+
+.botones-panel button {
+    width: 230px;
+}
+
+h1 {
+    color: var(--text-main);
+    text-shadow: 0 0 10px var(--shadow-main);
+}
+
+a {
+    color: var(--btn-bg);
+    text-decoration: underline;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+/* ==== VISTA REGISTRO ==== */
+body.vista-registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.registro-box {
+  background-color: var(--form-bg);
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--shadow-main);
+  width: 320px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.registro-box h2 {
+  margin-bottom: 15px;
+  color: var(--text-main);
+  text-shadow: 0 0 8px var(--outline-main);
+}
+
+.registro-box label {
+  text-align: left;
+  display: block;
+  margin-top: 8px;
+}
+
+.registro-box input,
+.registro-box select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.registro-box button {
+  margin-top: 15px;
+  width: 100%;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.registro-box a {
+  color: var(--btn-bg);
+  text-decoration: underline;
+  font-size: 14px;
+}
+/* ==== EVITA DOBLE RECUADRO EN FORMULARIO DE REGISTRO ==== */
+.vista-registro form {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 0;
+}
+/* ==== BOTONES EN TABLA DE ACCIONES ==== */
+.acciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;           /* espacio entre botones */
+  flex-wrap: nowrap;   /* evita que bajen a otra línea */
+  white-space: nowrap; /* evita que el texto se corte */
+  padding: 8px 0;
+}
+
+.acciones button {
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+  min-width: 90px;     /* todos los botones del mismo ancho */
+  transition: all 0.2s ease-in-out;
+}
+
+.acciones button:hover {
+  transform: scale(1.05);
+}
+/* ==== MENSAJES DE ALERTA O CONFIRMACIÓN ==== */
+.alerta {
+  width: 80%;
+  margin: 20px auto;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 8px var(--shadow-main);
+}
+
+/* Colores según tipo de alerta */
+.alerta.exito {
+  background-color: var(--btn-bg);
+  color: var(--text-main);
+  border: 2px solid #00c878;
+}
+
+.alerta.error {
+  background-color: rgba(255, 80, 80, 0.15);
+  color: var(--text-main);
+  border: 2px solid #ff5050;
+}
+
+.panel-stats {
+  align-self: center;
+  margin-top: 10px; /* o -10px según te guste */
+}
+canvas {
+    margin: 15px 0;
+    max-width: 100%;
+}
+/* ==== PANEL ESTADÍSTICAS (derecho) ==== */
+.panel-estadisticas {
+    width: 28%;
+    background-color: var(--form-bg);
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--shadow-main);
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin-top: 40px;
+}
+
+.panel-estadisticas h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-main);
+
+}
+
+.contenedor-grafica {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--form-bg);
+    border-radius: 12px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 260px !important;
+}
+
+/* Ajuste del panel coordinador */
+.vista-panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+}
+
+.logo-login {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo-login img {
+    width: 200px;     /* Ajusta el tamaño */
+    height: auto;
+}

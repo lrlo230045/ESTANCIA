@@ -1,0 +1,17 @@
+<?php
+class Database {
+    public static function getConnection() {
+        $host = "localhost";
+        $usuario = "root";
+        $password = "";
+        $base_datos = "gestion_materiales";
+
+        $conexion = new mysqli($host, $usuario, $password, $base_datos);
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
+        }
+        $conexion->set_charset("utf8mb4");
+        return $conexion;
+    }
+}
+?>
