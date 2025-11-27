@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Ver Materiales</title>
+
+    <!-- ============================================================
+         HOJAS DE ESTILO Y SCRIPT DE TEMA (modo claro/oscuro)
+    ============================================================ -->
     <link id="theme-link" rel="stylesheet" href="assets/css/colores.css">
     <script src="assets/js/tema.js"></script>
 </head>
@@ -11,22 +15,33 @@
 
     <h2>Materiales Disponibles</h2>
 
-    <!-- Mensaje de éxito -->
+    <!-- ============================================================
+         MENSAJE DE ÉXITO (se envía desde el controlador)
+    ============================================================ -->
     <?php if (!empty($mensaje)): ?>
         <div class="alerta exito">
             <?= htmlspecialchars($mensaje); ?>
         </div>
     <?php endif; ?>
 
-    <!-- Mensaje de error -->
+    <!-- ============================================================
+         MENSAJE DE ERROR (si algo sale mal)
+    ============================================================ -->
     <?php if (!empty($error)): ?>
         <div class="alerta error">
             <?= htmlspecialchars($error); ?>
         </div>
     <?php endif; ?>
 
-    <table border="1" cellpadding="10" style="margin:auto; margin-top:30px; 
-           color:var(--text-main); border-color: var(--outline-main);">
+    <!-- ============================================================
+         TABLA DE MATERIALES
+         - $materiales se envía desde el controlador
+    ============================================================ -->
+    <table border="1" cellpadding="10"
+           style="margin:auto; margin-top:30px; 
+                  color:var(--text-main); 
+                  border-color: var(--outline-main);">
+
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -38,6 +53,7 @@
         </thead>
 
         <tbody>
+            <!-- Recorrer materiales y mostrarlos -->
             <?php foreach ($materiales as $m): ?>
                 <tr>
                     <td><?= htmlspecialchars($m['nombre_material']); ?></td>
@@ -52,6 +68,10 @@
 
     <br>
 
+    <!-- ============================================================
+         BOTÓN PARA VOLVER AL PANEL PRINCIPAL
+         - $volver viene desde el controlador
+    ============================================================ -->
     <a href="<?= htmlspecialchars($volver); ?>">Volver al Panel</a>
 
 </body>

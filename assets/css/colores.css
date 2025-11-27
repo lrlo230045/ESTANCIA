@@ -12,8 +12,6 @@
   --accent-pink: #b4c6d1;
 }
 
-
-/* Igual estructura que el tema neón */
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
@@ -348,7 +346,7 @@ body.vista-registro {
 
 .panel-stats {
   align-self: center;
-  margin-top: 10px; /* o -10px según te guste */
+  margin-top: 10px; 
 }
 canvas {
     margin: 15px 0;
@@ -400,6 +398,6 @@ canvas {
 }
 
 .logo-login img {
-    width: 200px;     /* Ajusta el tamaño */
+    width: 200px;     
     height: auto;
 }
