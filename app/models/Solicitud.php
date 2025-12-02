@@ -76,7 +76,7 @@ class Solicitud {
         $sql = "SELECT s.*,
                        m.nombre_material
                 FROM solicitudes s
-                INNERINNER JOIN materiales m ON s.id_material = m.id_material
+                INNER JOIN materiales m ON s.id_material = m.id_material
                 LEFT JOIN alumnos a ON s.id_alumno = a.id_alumno
                 WHERE s.id_solicitud = ?";
 
