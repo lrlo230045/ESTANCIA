@@ -69,7 +69,7 @@ class Solicitud {
         return $stmt->execute();
     }
 
-    /**
+    /*
      * Obtiene una solicitud específica.
      */
     public function obtenerPorId($id, $id_usuario = null) {
